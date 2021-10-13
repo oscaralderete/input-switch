@@ -1,0 +1,203 @@
+<!--
+@author: Oscar Alderete - me@oscaralderete.com
+@website: http://oscaralderete.com
+@generator: NetBeans IDE v11.3
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="">
+<meta name="author" content="Oscar Alderete - me@oscaralderete.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+<title></title>
+<link rel="stylesheet" id="external_css">
+<link rel="stylesheet" href="css/oa_switch.css">
+<style>
+.padded {
+	padding: 1em;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.pointer{
+	cursor: pointer;
+}
+input[type=radio].greeny {
+	--bg-color-switch: teal;
+}
+input[type=checkbox].orange {
+	--bg-color-switch: orange;
+}
+input[type=radio].purple {
+	--bg-color-switch: purple;
+}
+
+</style>
+</head>
+<body>
+
+	<main class="padded">
+		<h1>Understanding CSS '::after' and '::before' and applying it to radio + checkout inputs</h1>
+
+		<section>
+			<p>Past month, I assisted to a CSS code camp for developers! After that, I'm ashamed to say it, but I thinked CSS as a toy language, something just for designers.</p>
+			<p>Before that lecture I have to admit how confused and ignorant I was on CSS. Finally I understand what '::after' and '::before' are! (between other advanced CSS concepts).</p>
+			<p>Now, I'm not an expert, not a CSS guy, but I have the enough understanding of CSS. That's why I took this old project (it was a clumsy copy-and-paste + trying-and-error project) and refactored it for what you get here.</p>
+			<p>Visually it's still ugly, but plenty of 'calc()', ':root', 'var()' and other declarations that a developer can understand and respect. There is a LESS file too (no need to be an expert to translate it to SASS in case that's your preferred CSS pre-processor) so you can customize the code easily and quickly. Just try it!</p>
+		</section>
+
+		<section>
+			<h2>Input radio switch samples:</h2>
+			<form onsubmit="app.submit()" autocomplete="off">
+				<fieldset>
+					<legend>The programming language for web that you love the most:</legend>
+					<label class="pointer">
+						<input type="radio" class="switch" name="fav_programming_language" value="PHP" checked> PHP
+					</label>
+					<label class="pointer">
+						<input type="radio" class="switch" name="fav_programming_language" value="JS"> JavaScript
+					</label>
+					<label class="pointer">
+						<input type="radio" class="switch" name="fav_programming_language" value="Java"> Java
+					</label>
+					<label class="pointer">
+						<input type="radio" class="switch" name="fav_programming_language" value="Python"> Python
+					</label>
+					<label class="pointer">
+						<input type="radio" class="switch" name="fav_programming_language" value="RoR"> Ruby On Rails
+					</label>
+					<label class="pointer">
+						<input type="radio" class="switch" name="fav_programming_language" value="C#"> C#
+					</label>
+				</fieldset>
+			</form>
+			<br>
+			<form onsubmit="app.submit()" autocomplete="off">
+				<fieldset>
+					<legend>As a web developer you define yourself as:</legend>
+					<label class="pointer">
+						<input type="radio" class="switch greeny" name="i_am" value="front-end"> Front-End
+					</label>
+					<label class="pointer">
+						<input type="radio" class="switch greeny" name="i_am" value="back-end"> Back-End
+					</label>
+					<label class="pointer">
+						<input type="radio" class="switch greeny" name="i_am" value="full-stack" checked> Full Stack
+					</label>
+				</fieldset>
+			</form>
+			<br>
+			<form onsubmit="app.submit()" autocomplete="off">
+				<fieldset>
+					<legend>Do you like SVGs? (I do, so I added a support for them):</legend>
+					<label class="pointer">
+						<input type="radio" class="svg-switch" name="svg" value="like"> I like them
+					</label>
+					<label class="pointer">
+						<input type="radio" class="svg-switch" name="svg" value="hate"> I hate them
+					</label>
+					<label class="pointer">
+						<input type="radio" class="svg-switch" name="svg" value="middle"> More or less
+					</label>
+					<label class="pointer">
+						<input type="radio" class="svg-switch" name="svg" value="what"> What are SVGs?
+					</label>
+				</fieldset>
+			</form>
+		</section>
+
+		<section>
+			<h2>Input checkbox switch samples:</h2>
+			<form onsubmit="app.submit()" autocomplete="off">
+				<fieldset>
+					<legend>What beberage(s) you use to drink when you're hardly developing:</legend>
+					<label class="pointer">
+						<input type="checkbox" class="switch" name="beberage" value="water"> Water
+					</label>
+					<label class="pointer">
+						<input type="checkbox" class="switch" name="beberage" value="coffee"> Coffee
+					</label>
+					<label class="pointer">
+						<input type="checkbox" class="switch" name="beberage" value="beer" checked> Beer
+					</label>
+					<label class="pointer">
+						<input type="checkbox" class="switch" name="beberage" value="whisky"> Whisky
+					</label>
+					<label class="pointer">
+						<input type="checkbox" class="switch" name="beberage" value="vodka" checked> Vodka
+					</label>
+				</fieldset>
+			</form>
+			<br>
+			<form onsubmit="app.submit()" autocomplete="off">
+				<fieldset>
+					<legend>Activities you like to do after a busy week of development:</legend>
+					<label class="pointer">
+						<input type="checkbox" class="x-switch orange" name="weekend_activities" value="party" checked> Party
+					</label>
+					<label class="pointer">
+						<input type="checkbox" class="x-switch orange" name="weekend_activities" value="biking" checked> Biking
+					</label>
+					<label class="pointer">
+						<input type="checkbox" class="x-switch orange" name="weekend_activities" value="Sleep"> Sleep
+					</label>
+					<label class="pointer">
+						<input type="checkbox" class="x-switch orange" name="weekend_activities" value="watch_movies"> Watch movies
+					</label>
+				</fieldset>
+			</form>
+		</section>
+
+		<section>
+			<h2>Check CSS frameworks compatibility:</h2>
+			<form onsubmit="app.submit()" autocomplete="off">
+				<fieldset>
+					<legend>How it looks with: <b id="current_framework" class="uppercase"></b></legend>
+					<label class="pointer">
+						<input type="radio" class="switch purple" name="css_framework" onclick="app.switchCSS()" value="bootstrap"> Bootstrap
+					</label>
+					<br>
+					<label class="pointer">
+						<input type="radio" class="switch purple" name="css_framework" onclick="app.switchCSS()" value="bulma"> Bulma
+					</label>
+					<br>
+					<label class="pointer">
+						<input type="radio" class="switch purple" name="css_framework" onclick="app.switchCSS()" value="purecss"> Pure CSS
+					</label>
+					<br>
+					<label class="pointer">
+						<input type="radio" class="switch purple" name="css_framework" onclick="app.switchCSS()" value="tailwind"> Tailwind
+					</label>
+					<br>
+					<label class="pointer">
+						<input type="radio" class="switch purple" name="css_framework" onclick="app.switchCSS()" value="materialize"> Materialize (sadly it doesn't work)
+					</label>
+				</fieldset>
+			</form>
+		</section>
+	</main>
+		
+<script>
+const app = {
+	frameworks: {
+		bootstrap: 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css',
+		bulma: 'https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css',
+		tailwind: 'https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css',
+		purecss: 'https://unpkg.com/purecss@2.0.6/build/pure-min.css',
+		materialize: 'https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css'
+	},
+	submit(){
+		return false;
+	},
+	switchCSS(){
+		const x = event.target.value;
+		document.getElementById('external_css').setAttribute('href', app.frameworks[x]);
+		document.getElementById('current_framework').textContent = x;
+		console.log(app.frameworks[x]);
+	}
+};
+</script>
+
+</body>
+</html>
