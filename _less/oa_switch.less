@@ -16,6 +16,9 @@
 @bg-color-switch: rgb(57, 105, 239);
 @bg-color-checked: #fff;
 @bg-color-disabled: #ccc;
+// you need to replace every hash '#' on your svg with '%23'
+@url-svg-icon-checked: url('data:image/svg+xml,<svg viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0" y="0" width="300" height="300"><path id="check" d="M 209.5042 36.9928 L 135.075 182.605 L 64.3047 146.6959 L 37.0477 200.0285 L 161.25 262.835 L 161.435 262.475 L 161.86 262.69 L 263.1726 64.5153 L 209.5042 36.9928 Z" fill="white"/></svg>');
+@url-svg-icon-unchecked: url('data:image/svg+xml,<svg viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0" y="0" width="300" height="300"><path id="times" d="M 220.7107 36.8629 L 150 107.575 L 79.2893 36.8629 L 36.8629 79.2893 L 107.575 150 L 36.8629 220.7107 L 79.2893 263.1371 L 150 192.425 L 220.7107 263.1371 L 263.1371 220.7107 L 192.425 150 L 263.1371 79.2893 L 220.7107 36.8629 Z" fill="%23ccc"/></svg>');
 
 
 :root
@@ -31,6 +34,8 @@
 	--switch-bg-height-top: @switch-bg-height-top;
 	--switch-bg-width: @switch-bg-width;
 	--switch-bg-left: @switch-bg-left;
+	--url-svg-icon-checked: @url-svg-icon-checked;
+	--url-svg-icon-unchecked: @url-svg-icon-unchecked;
 }
 
 // checkbox.switch
@@ -260,7 +265,7 @@ input[type=radio].svg-switch::after
 
 input[type=radio].svg-switch::before
 {
-	background: url('data:image/svg+xml,<svg viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0" y="0" width="300" height="300"><path id="check" d="M 209.5042 36.9928 L 135.075 182.605 L 64.3047 146.6959 L 37.0477 200.0285 L 161.25 262.835 L 161.435 262.475 L 161.86 262.69 L 263.1726 64.5153 L 209.5042 36.9928 Z" fill="white"/></svg>') center center no-repeat transparent;
+	background: var(--url-svg-icon-checked) center center no-repeat transparent;
 	background-size: calc(var(--height) * .8) auto;
 	opacity: 0;
 }
@@ -272,7 +277,7 @@ input[type=radio].svg-switch:checked::before
 
 input[type=radio].svg-switch::after
 {
-	background: url('data:image/svg+xml,<svg viewBox="0 0 300 300" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" x="0" y="0" width="300" height="300"><path id="times" d="M 220.7107 36.8629 L 150 107.575 L 79.2893 36.8629 L 36.8629 79.2893 L 107.575 150 L 36.8629 220.7107 L 79.2893 263.1371 L 150 192.425 L 220.7107 263.1371 L 263.1371 220.7107 L 192.425 150 L 263.1371 79.2893 L 220.7107 36.8629 Z" fill="%23ccc"/></svg>') center center no-repeat transparent;
+	background: var(--url-svg-icon-unchecked) center center no-repeat transparent;
 	background-size: calc(var(--height) * .8) auto;
 	opacity: 1;
 }
